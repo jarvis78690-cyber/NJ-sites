@@ -349,27 +349,51 @@
 </footer>
 
 <script>
-// ── Load images via JS fetch to bypass CORS on local file ──
+// ── All images swapped to genuine plumbing photography ──
 const IMGS = {
-    hero:    'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=1600&q=80',
-    about1:  'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=800&q=80',
-    about2:  'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&q=80',
-    cta:     'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80',
+    // Hero: plumber working on pipes under sink — overhead perspective
+    hero:    'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80',
+
+    // About main: professional plumber fixing copper pipe joints
+    about1:  'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=800&q=80',
+
+    // About accent: close-up of pipe wrench on copper fittings
+    about2:  'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=400&q=80',
+
+    // CTA banner: plumber soldering copper pipes — dramatic close-up
+    cta:     'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=1600&q=80',
+
+    // Map / location area: New Jersey / city aerial
     map:     'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=700&q=80',
+
+    // Service card images — all genuine plumbing scenes
     svc: [
-        'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
+        // 1. Emergency Plumbing: burst pipe / water flooding
+        'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
+        // 2. Pipe Repair & Replacement: copper pipe work close-up
         'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=600&q=80',
-        'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&q=80',
+        // 3. Water Heater Installation: water heater tank
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        // 4. Drain Cleaning: drain snake / sewer cleaning
+        'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=600&q=80',
+        // 5. Leak Detection: plumber using inspection tools
         'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=600&q=80',
-        'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&q=80',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        // 6. Bathroom Remodeling: bathroom fixtures / remodel
+        'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
     ],
+
+    // Gallery: variety of plumbing job photography
     gallery: [
-        'https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=900&q=80',
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        // Large feature: plumber working under sink, full body shot
+        'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&q=80',
+        // Copper pipe soldering close-up
         'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=600&q=80',
-        'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80',
-        'https://images.unsplash.com/photo-1545259741-2ea3ebf61fa3?w=600&q=80',
+        // Pipe fittings and valves
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
+        // Professional plumber portrait with tools (wide)
+        'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=600&q=80',
+        // Modern bathroom after remodel
+        'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
     ]
 };
 
