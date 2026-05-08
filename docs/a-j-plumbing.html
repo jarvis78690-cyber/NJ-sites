@@ -349,51 +349,40 @@
 </footer>
 
 <script>
-// ── All images swapped to genuine plumbing photography ──
+// ── Pexels plumbing images — direct src, no fetch wrapper ──
+const BASE = 'https://images.pexels.com/photos';
 const IMGS = {
-    // Hero: plumber working on pipes under sink — overhead perspective
-    hero:    'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=1600&q=80',
-
-    // About main: professional plumber fixing copper pipe joints
-    about1:  'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=800&q=80',
-
-    // About accent: close-up of pipe wrench on copper fittings
-    about2:  'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=400&q=80',
-
-    // CTA banner: plumber soldering copper pipes — dramatic close-up
-    cta:     'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=1600&q=80',
-
-    // Map / location area: New Jersey / city aerial
-    map:     'https://images.unsplash.com/photo-1524661135-423995f22d0b?w=700&q=80',
-
-    // Service card images — all genuine plumbing scenes
+    // Hero: plumber working under sink
+    hero:   `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+    // About main: plumber tightening a pipe fitting
+    about1: `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=900`,
+    // About accent: close-up of copper pipe joints
+    about2: `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=500`,
+    // CTA banner: plumber soldering pipes
+    cta:    `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=1600`,
+    // Map: aerial city NJ
+    map:    `${BASE}/87378/pexels-photo-87378.jpeg?auto=compress&cs=tinysrgb&w=700`,
     svc: [
-        // 1. Emergency Plumbing: burst pipe / water flooding
-        'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80',
-        // 2. Pipe Repair & Replacement: copper pipe work close-up
-        'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=600&q=80',
-        // 3. Water Heater Installation: water heater tank
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-        // 4. Drain Cleaning: drain snake / sewer cleaning
-        'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=600&q=80',
-        // 5. Leak Detection: plumber using inspection tools
-        'https://images.unsplash.com/photo-1607400201889-565b1ee75f8e?w=600&q=80',
-        // 6. Bathroom Remodeling: bathroom fixtures / remodel
-        'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
+        // 1. Emergency Plumbing
+        `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 2. Pipe Repair & Replacement
+        `${BASE}/2556449/pexels-photo-2556449.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 3. Water Heater Installation
+        `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 4. Drain Cleaning
+        `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 5. Leak Detection
+        `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 6. Bathroom Remodeling
+        `${BASE}/6585756/pexels-photo-6585756.jpeg?auto=compress&cs=tinysrgb&w=700`,
     ],
-
-    // Gallery: variety of plumbing job photography
     gallery: [
-        // Large feature: plumber working under sink, full body shot
-        'https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=900&q=80',
-        // Copper pipe soldering close-up
-        'https://images.unsplash.com/photo-1558618047-f4e30d950f8f?w=600&q=80',
-        // Pipe fittings and valves
-        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80',
-        // Professional plumber portrait with tools (wide)
-        'https://images.unsplash.com/photo-1574175715261-bff0da07d51e?w=600&q=80',
-        // Modern bathroom after remodel
-        'https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600&q=80',
+        // Large feature
+        `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1000`,
+        `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        `${BASE}/2556449/pexels-photo-2556449.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=700`,
     ]
 };
 
@@ -406,51 +395,37 @@ const services = [
     { title: 'Bathroom Remodeling', desc: 'Complete bathroom plumbing for renovations — new fixtures, tub and shower installs, and full rough-in work.' },
 ];
 
-async function loadImage(url) {
-    try {
-        const res = await fetch(url);
-        const blob = await res.blob();
-        return URL.createObjectURL(blob);
-    } catch {
-        return url; // fallback to direct URL
-    }
-}
-
-async function init() {
-    // Hero
-    const heroUrl = await loadImage(IMGS.hero);
-    document.getElementById('heroBg').style.backgroundImage = `url('${heroUrl}')`;
+function init() {
+    // Hero — set directly, no fetch
+    document.getElementById('heroBg').style.backgroundImage = `url('${IMGS.hero}')`;
 
     // About images
-    document.getElementById('aboutMain').src = await loadImage(IMGS.about1);
-    document.getElementById('aboutAccent').src = await loadImage(IMGS.about2);
+    document.getElementById('aboutMain').src  = IMGS.about1;
+    document.getElementById('aboutAccent').src = IMGS.about2;
 
     // CTA
-    const ctaUrl = await loadImage(IMGS.cta);
-    document.getElementById('ctaBg').style.backgroundImage = `url('${ctaUrl}')`;
+    document.getElementById('ctaBg').style.backgroundImage = `url('${IMGS.cta}')`;
 
     // Map
-    document.getElementById('mapImg').src = await loadImage(IMGS.map);
+    document.getElementById('mapImg').src = IMGS.map;
 
     // Services
     const grid = document.getElementById('servicesGrid');
-    for (let i = 0; i < services.length; i++) {
-        const imgUrl = await loadImage(IMGS.svc[i]);
+    services.forEach((svc, i) => {
         const card = document.createElement('div');
         card.className = 'service-card anim';
-        card.innerHTML = `<img class="service-img" src="${imgUrl}" alt="${services[i].title}"><div class="service-card-body"><h3>${services[i].title}</h3><p>${services[i].desc}</p></div>`;
+        card.innerHTML = `<img class="service-img" src="${IMGS.svc[i]}" alt="${svc.title}" loading="lazy"><div class="service-card-body"><h3>${svc.title}</h3><p>${svc.desc}</p></div>`;
         grid.appendChild(card);
-    }
+    });
 
     // Gallery
     const gg = document.getElementById('galleryGrid');
-    for (let i = 0; i < IMGS.gallery.length; i++) {
-        const imgUrl = await loadImage(IMGS.gallery[i]);
+    IMGS.gallery.forEach((url, i) => {
         const item = document.createElement('div');
         item.className = 'gallery-item';
-        item.innerHTML = `<img src="${imgUrl}" alt="Work photo ${i+1}">`;
+        item.innerHTML = `<img src="${url}" alt="Work photo ${i+1}" loading="lazy">`;
         gg.appendChild(item);
-    }
+    });
 
     // Scroll reveal
     const observer = new IntersectionObserver(entries => {
