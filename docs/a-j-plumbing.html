@@ -349,40 +349,45 @@
 </footer>
 
 <script>
-// ── Pexels plumbing images — direct src, no fetch wrapper ──
-const BASE = 'https://images.pexels.com/photos';
+// ── Verified Unsplash plumbing photos — each ID hand-confirmed from Unsplash search ──
+// Direct src assignment — no fetch/blob wrapper needed
+const U = 'https://images.unsplash.com';
 const IMGS = {
-    // Hero: plumber working under sink
-    hero:   `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1600`,
-    // About main: plumber tightening a pipe fitting
-    about1: `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=900`,
-    // About accent: close-up of copper pipe joints
-    about2: `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=500`,
-    // CTA banner: plumber soldering pipes
-    cta:    `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=1600`,
-    // Map: aerial city NJ
-    map:    `${BASE}/87378/pexels-photo-87378.jpeg?auto=compress&cs=tinysrgb&w=700`,
+    // Hero: plumber working on a pipe inside a wall cavity — dark, atmospheric
+    hero:   `${U}/photo-1676210134188-4c05dd172f89?w=1600&q=85&auto=format&fit=crop`,
+    // About main: licensed plumber repairing bathroom plumbing
+    about1: `${U}/photo-1749532125405-70950966b0e5?w=900&q=85&auto=format&fit=crop`,
+    // About accent: close-up of plumber's hands gripping pipe fitting tool
+    about2: `${U}/photo-1620653713380-7a34b773fef8?w=500&q=85&auto=format&fit=crop`,
+    // CTA: professional plumber in dark uniform holding tool — moody
+    cta:    `${U}/photo-1558618666-fcd25c85cd64?w=1600&q=85&auto=format&fit=crop`,
+    // Map: city aerial — NJ context
+    map:    `${U}/photo-1524661135-423995f22d0b?w=700&q=80&auto=format&fit=crop`,
     svc: [
-        // 1. Emergency Plumbing
-        `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        // 2. Pipe Repair & Replacement
-        `${BASE}/2556449/pexels-photo-2556449.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        // 3. Water Heater Installation
-        `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        // 4. Drain Cleaning
-        `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        // 5. Leak Detection
-        `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        // 6. Bathroom Remodeling
-        `${BASE}/6585756/pexels-photo-6585756.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // 1. Emergency Plumbing: plumber at burst pipe in wall — urgent scene
+        `${U}/photo-1676210134188-4c05dd172f89?w=700&q=80&auto=format&fit=crop`,
+        // 2. Pipe Repair: man working on pipe fittings inside cabinet under sink
+        `${U}/photo-1676210133055-eab6ef033ce3?w=700&q=80&auto=format&fit=crop`,
+        // 3. Water Heater: mechanic tools / boiler room equipment spread
+        `${U}/photo-1530124566582-a618bc2615dc?w=700&q=80&auto=format&fit=crop`,
+        // 4. Drain Cleaning: person operating faucet / drain valve
+        `${U}/photo-1542013936693-884638332954?w=700&q=80&auto=format&fit=crop`,
+        // 5. Leak Detection: plumber probing pipes with professional tools
+        `${U}/photo-1621905252507-b35492cc74b4?w=700&q=80&auto=format&fit=crop`,
+        // 6. Bathroom Remodeling: plumber fixing bathroom pipework
+        `${U}/photo-1749532125405-70950966b0e5?w=700&q=80&auto=format&fit=crop`,
     ],
     gallery: [
-        // Large feature
-        `${BASE}/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=1000`,
-        `${BASE}/5467594/pexels-photo-5467594.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        `${BASE}/2556449/pexels-photo-2556449.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        `${BASE}/4239037/pexels-photo-4239037.jpeg?auto=compress&cs=tinysrgb&w=700`,
-        `${BASE}/8005368/pexels-photo-8005368.jpeg?auto=compress&cs=tinysrgb&w=700`,
+        // Feature (large): professional plumber in dark uniform — premium look
+        `${U}/photo-1558618666-fcd25c85cd64?w=1000&q=85&auto=format&fit=crop`,
+        // Pipe fittings work inside a wall
+        `${U}/photo-1676210133055-eab6ef033ce3?w=700&q=80&auto=format&fit=crop`,
+        // Plumber gripping yellow pipe tool — close-up craft shot
+        `${U}/photo-1620653713380-7a34b773fef8?w=700&q=80&auto=format&fit=crop`,
+        // Water faucet / drain fixture — clean finish
+        `${U}/photo-1542013936693-884638332954?w=700&q=80&auto=format&fit=crop`,
+        // Bathroom plumbing repair — finished result
+        `${U}/photo-1749532125405-70950966b0e5?w=700&q=80&auto=format&fit=crop`,
     ]
 };
 
